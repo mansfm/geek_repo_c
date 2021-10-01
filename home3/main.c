@@ -15,11 +15,12 @@
 
 int main (void) 
 {
-	int x1, x2, x3;
-	int y;
+	int r;
+	int Pi = 3.1415;
+	int y1, y2, y3;
 
 	printf("Please enter radius\n");
-	scanf("%d%d", &x1, &x2 );
-	y = x1 * x2;
-	printf("Result %d\n", y);
+	scanf("%d", &r);
+	y1 = 2 * Pi * r;
+	printf("Длина окружности %d\n", y1);
 }
