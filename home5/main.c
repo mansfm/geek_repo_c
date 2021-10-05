@@ -13,18 +13,27 @@
 
 
 #include <stdio.h>
+#include <math.h>
+#include <stdbool.h>
 
 
 int get_user_input(void);
+
+bool is_prime(int arg);
 
 int main (void) 
 {
 
 	int from_user = get_user_input();
 
+	printf("number %d is prime %s\n", from_user, is_prime(from_user) ? "TRUE" : "FALSE");
+
+
+	/*
 	for (int i = 1; i <= from_user; i++ ) {
 		printf("iteration %d of %d\n", i, from_user);
 	}
+	*/
 
 
 
@@ -92,4 +101,21 @@ int get_user_input(void)
 	}
 
 	return input;
+}
+
+
+bool is_prime(int arg)
+{
+	bool prime = true;
+
+	if (arg <= 2) {
+		return false;
+	}
+
+	for (int i = 2; i < arg; i++) {
+		if ((arg % i) == 0)
+			return false;
+	}
+
+	return prime;
 }
