@@ -74,11 +74,13 @@ int main (void)
 	
     	
 
+	/*
 	int nummm=8, ii;
     	for(ii=sizeof(nummm)*8-1; ii>=0; --ii)
 	{
-        	printf("%d \n", nummm&(1<<ii)?1:0);
+        	printf("%d", nummm&(1<<ii)?1:0);
     	}
+	*/
 
 
 	
@@ -101,6 +103,36 @@ int main (void)
 		printf("Wrong value\n");
 
 	}
+
+
+
+
+
+	int ii;
+        for(ii=sizeof(a)*8-1; ii>=0; --ii)
+        {
+                printf("%d", a&(1<<ii)?1:0);
+        }
+        printf("\n");
+
+
+
+	int iii;
+        for(iii=sizeof(num)*8-1; iii>=0; --iii)
+        {
+                printf("%d", num&(1<<iii)?1:0);
+        }
+	printf("\n");
+
+
+
+	int iiii;
+        for(iiii=sizeof(result)*8-1; iiii>=0; --iiii)
+        {
+                printf("%d", result&(1<<iiii)?1:0);
+        }
+	printf("\n");
+
 	
 
 
