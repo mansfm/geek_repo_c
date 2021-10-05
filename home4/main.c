@@ -35,25 +35,25 @@ Zero shift is not defined
 
 int main (void) 
 {
-	unsigned int a; //первое чилсо
+	unsigned int a; //первое число
 	int num; //число для сдвига
 	unsigned int result;//результат
 
 	printf("Enter number and shift value:\n");
-        scanf("%u %d", &a, &num); //ввод первого числа и второг числа для сдвига	
+        scanf("%u %d", &a, &num); //ввод первого числа и второго числа для сдвига	
 	 
-	int n = num; //временная переменная для вычисления разрядов
-	if (n < 0) n = -n;
+	int n = num; 
+	if (n < 0) n = -n; //убираем знак для второго числа
 
 	    
 	if (num>0) 
 	{
-		result = a >> n; //делаем сдвиг вправо на количество разрядов второго числа
+		result = a >> n; //делаем сдвиг вправо на количество разрядов указанных во втором числе
 		printf("Input: 0x%x shift right %d \nResult: 0x%x \n", a, n, result);
 	}
 	else if (num<0) 
 	{
-		result = a << n; //делаем сдвиг влево на количество разрядов второго числа
+		result = a << n; //делаем сдвиг влево на количество разрядов указанных во втором числе
 		printf("Input: 0x%x shift left %d \nResult: 0x%x \n", a, n, result);	
 	}
 	else if (num==0)
