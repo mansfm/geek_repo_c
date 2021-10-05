@@ -42,25 +42,19 @@ int main (void)
 	printf("Enter number and shift value:\n");
         scanf("%u %d", &a, &num); //ввод первого числа и второг числа для сдвига	
 	 
-	int i = 0; //переменная для количества разрядов 
 	int n = num; //временная переменная для вычисления разрядов
 	if (n < 0) n = -n;
-    	while (n > 0) 
-	{
-        	n = n/10;
-        	i += 1;
-    	}
 
 	    
 	if (num>0) 
 	{
-		result = a >> i; //делаем сдвиг вправо на количество разрядов второго числа
-		printf("Input: 0x%x shift right %d \nResult: 0x%x \n", a, i, result);
+		result = a >> n; //делаем сдвиг вправо на количество разрядов второго числа
+		printf("Input: 0x%x shift right %d \nResult: 0x%x \n", a, n, result);
 	}
 	else if (num<0) 
 	{
-		result = a << i; //делаем сдвиг влево на количество разрядов второго числа
-		printf("Input: 0x%x shift left %d \nResult: 0x%x \n", a, i, result);	
+		result = a << n; //делаем сдвиг влево на количество разрядов второго числа
+		printf("Input: 0x%x shift left %d \nResult: 0x%x \n", a, n, result);	
 	}
 	else if (num==0)
 	{
