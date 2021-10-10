@@ -36,13 +36,13 @@ int main (void)
 void summ_of_digits(void)
 {
     char c;
-    int summ = 0;
+    int digits = 0;
 
     while((c = getchar()) != '\n') {
         if (c >= '0' && c <= '9') {
-            summ += c - '0';
+            digits++;
         }
     }
 
-    printf("Summ of digits %d\n", summ);
+    printf("Summ of digits %d\n", digits);
 }
