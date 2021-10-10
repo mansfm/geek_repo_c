@@ -23,17 +23,17 @@
 #include <stdio.h>
 
 
-void summ_of_digits(void);
+void number_of_digits(void);
 
 int main (void) 
 {
-	summ_of_digits();
+	number_of_digits();
 
 	return 0;
 
 }
 
-void summ_of_digits(void)
+void number_of_digits(void)
 {
     char c;
     int digits = 0;
@@ -44,5 +44,5 @@ void summ_of_digits(void)
         }
     }
 
-    printf("Summ of digits %d\n", digits);
+    printf("Number of digits %d\n", digits);
 }
