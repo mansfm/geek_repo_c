@@ -37,12 +37,24 @@ void number_of_digits(void)
 {
     char c;
     int digits = 0;
+    int chars = 0;
+    int spaces = 0;
 
     while((c = getchar()) != '\n') {
-        if (c >= '0' && c <= '9') {
-            digits++;
+        if (c != ' ') {
+		chars++;
+	} 
+	
+	if (c >= '0' && c <= '9') {
+		digits++;
         }
+
+	if (c == ' ') {
+		spaces++;
+	}
     }
 
+    printf("Number of chars %d\n", chars);
     printf("Number of digits %d\n", digits);
+    printf("Number of spaces %d\n", spaces);
 }
