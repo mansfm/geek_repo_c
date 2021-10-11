@@ -47,31 +47,29 @@ void counting_characters(void)
 	int percent_of_spaces = 0;
 
 	while((c = getchar()) != '\n') {
+
         	if (c != '\n') {
 			total++; //общее количество символов
 		} 
-	
 		if (c >= '0' && c <= '9') {
 			digits++; //количество цифр
         	}
-
 		if ('a' <= c && c <= 'z') {
-			uppercase++;
+			uppercase++; //количество символов в верхнем регистре
 		}
-
 		if ('A' <= c && c <= 'Z') {
-			lowercase++;
+			lowercase++; //количество символов в нижнем регистре
 		}
-		
 		if (c == ' ') {
 			spaces++; //количество пробелов
 		}
     	}
 
-	printf("Total %d\n", total); //вывод общего количества символов
-	printf("Digits %d (%d%%)\n", digits, percent_of_digits = (float)digits/(float)total*100); //вывод количества цифр и процента цифр от общего количества символов
-        printf("Uppercase %d (%d%%)\n", uppercase, percent_of_uppercase = (float)uppercase/(float)total*100); //вывод количества букв в верхнем регистре и процент от общего количества символов
-        printf("Lowercase %d (%d%%)\n", lowercase, percent_of_lowercase = (float)lowercase/(float)total*100); //вывод количества букв в нижнем регистре и процент от общего количества символов
-	printf("Spaces %d (%d%%)\n", spaces, percent_of_spaces = (float)spaces/(float)total*100); //вывод количества пробелов и процент пробелов от общего количества символов
+	printf("Total:     %d\n", total); //вывод общего количества символов
+	printf("Digits:    %d (%d%%)\n", digits, percent_of_digits = (float)digits/(float)total*100); //вывод количества цифр и процента цифр от общего количества символов
+        printf("Uppercase: %d (%d%%)\n", uppercase, percent_of_uppercase = (float)uppercase/(float)total*100); //вывод количества букв в верхнем регистре и процент от общего количества символов
+        printf("Lowercase: %d (%d%%)\n", lowercase, percent_of_lowercase = (float)lowercase/(float)total*100); //вывод количества букв в нижнем регистре и процент от общего количества символов
+	printf("Spaces:    %d (%d%%)\n", spaces, percent_of_spaces = (float)spaces/(float)total*100); //вывод количества пробелов и процент пробелов от общего количества символов
 
 }
+
