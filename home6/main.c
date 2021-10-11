@@ -36,15 +36,15 @@ int main (void)
 void counting_characters(void)
 {
 	char c;
+	int total = 0;
 	int digits = 0;
-	int chars = 0;
 	int spaces = 0;
 	int percent_of_digits = 0;
 	int percent_of_spaces = 0;
 
 	while((c = getchar()) != '\n') {
         	if (c != '\n') {
-			chars++; //количество символов
+			total++; //общее количество символов
 		} 
 	
 		if (c >= '0' && c <= '9') {
@@ -56,14 +56,9 @@ void counting_characters(void)
 		}
     	}
 
-	printf("Chars %d\n", chars);
+	printf("Total %d\n", total);
 	
-	printf("Digits %d\n", digits);
-	percent_of_digits = (float)digits/(float)chars*100; //процент цифр
-	printf("Percent of digits %d\n", percent_of_digits);
-	
-	printf("Spaces %d\n", spaces);
-	percent_of_spaces = (float)spaces/(float)chars*100; //процент пробелов
-	printf("Percent of spaces %d\n", percent_of_spaces);
+	printf("Digits %d (%d%%)\n", digits, percent_of_digits = (float)digits/(float)total*100); //вывод количества цифр и процента цифр от общего количества символов
+	printf("Spaces %d (%d%%)\n", spaces, percent_of_spaces = (float)spaces/(float)total*100); //вывод количества пробелов и процент пробелов от общего количества символов
 
 }
