@@ -23,38 +23,47 @@
 #include <stdio.h>
 
 
-void number_of_digits(void);
+void counting_characters(void);
 
 int main (void) 
 {
-	number_of_digits();
+	counting_characters();
 
 	return 0;
 
 }
 
-void number_of_digits(void)
+void counting_characters(void)
 {
-    char c;
-    int digits = 0;
-    int chars = 0;
-    int spaces = 0;
+	char c;
+	int digits = 0;
+	int chars = 0;
+	int spaces = 0;
+	int percent_of_digits = 0;
+	int percent_of_spaces = 0;
 
-    while((c = getchar()) != '\n') {
-        if (c != ' ') {
-		chars++;
-	} 
+	while((c = getchar()) != '\n') {
+        	if (c != '\n') {
+			chars++; //количество символов
+		} 
 	
-	if (c >= '0' && c <= '9') {
-		digits++;
-        }
+		if (c >= '0' && c <= '9') {
+			digits++; //количество цифр
+        	}
 
-	if (c == ' ') {
-		spaces++;
-	}
-    }
+		if (c == ' ') {
+			spaces++; //количество пробелов
+		}
+    	}
 
-    printf("Number of chars %d\n", chars);
-    printf("Number of digits %d\n", digits);
-    printf("Number of spaces %d\n", spaces);
+	printf("Chars %d\n", chars);
+	
+	printf("Digits %d\n", digits);
+	percent_of_digits = (float)digits/(float)chars*100; //процент цифр
+	printf("Percent of digits %d\n", percent_of_digits);
+	
+	printf("Spaces %d\n", spaces);
+	percent_of_spaces = (float)spaces/(float)chars*100; //процент пробелов
+	printf("Percent of spaces %d\n", percent_of_spaces);
+
 }
