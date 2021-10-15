@@ -21,19 +21,34 @@ bool is_target_hit(float X, float Y, float R)
 #include <stdbool.h>
 
 bool get_user_input(int *a, int *b);
+void swap (int *a, int *b);
 
 
 int main(void) 
 {
 	int a = 5, b = 10;
 
+	int *p_a = &a;
+	int *p_b = &b;
+
 	bool ret = get_user_input(&a, &b);
 	if (ret == false) {
 		printf("Error!\n");
 		return -1;
 	}
+
+	swap(p_a, p_b);
+	printf("%d %d\n", a, b);
 	
 	return 0;
+}
+
+
+void swap(int *a, int *b)
+{
+	int tmp = *a;
+	*a = *b;
+	*b = tmp;
 }
 
 
