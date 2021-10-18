@@ -50,7 +50,7 @@ int main(void)
 
 
 
-void swap(float *X, float *Y, float *R)
+void swap(float *X, float *Y, float *R) // здесь будет функция сравнения попадания/промаха
 {
 	float tmp = *X;
 	*X = *Y;
@@ -60,14 +60,24 @@ void swap(float *X, float *Y, float *R)
 
 
 
-bool get_user_input(float *X, float *Y, float *R)
+bool get_user_input(float *X, float *Y, float *R) // функция проверки на валидацию
 {
 	int retcode;
 
 	retcode = scanf("%f%f%f", X, Y, R);
 	if (retcode == 3) {
-        	return true;
+        	printf("test\n");
+		if (*R != 0) {
+			printf("test2\n");
+			if (*R > 0) {
+				printf("test3\n");
+				return true;
+			}
+		}
+		//return true;
 	} else {
 		return false;
 	}
+
 }
+
