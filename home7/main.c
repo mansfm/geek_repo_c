@@ -20,8 +20,8 @@ bool is_target_hit(float X, float Y, float R)
 #include <stdio.h>
 #include <stdbool.h>
 
-bool is_target_hit(float *X, float *Y, float *R);
-bool get_user_input(float *X, float *Y, float *R);
+bool is_target_hit(float *p_x, float *p_y, float *p_r);
+bool get_user_input(float *p_x, float *p_y, float *p_r);
 
 int main(void) 
 {
@@ -39,33 +39,32 @@ int main(void)
 		return -1;
 	}
 
-	bool result = is_target_hit(p_x, p_y, p_r);
+	bool result = is_target_hit(&X, &Y, &R);
         if (result == true) {
                 printf("Successful hit!\n");
         }
         else {
 		printf("Lucky next time\n");
-
 	}
 	
 	return 0;
 }
 
-bool get_user_input(float *X, float *Y, float *R) // функция проверки на валидацию
+bool get_user_input(float *p_x, float *p_y, float *p_r) // функция проверки на валидацию
 {
 	int retcode;
 
-	retcode = scanf("%f%f%f", X, Y, R);
-	if (retcode == 3 && *R != 0 && *R > 0) {
+	retcode = scanf("%f%f%f", p_x, p_y, p_r);
+	if (retcode == 3 && *p_r != 0 && *p_r > 0) {
 		return true;
 	} else {
 		return false;
 	}
 }
 
-bool is_target_hit(float *X, float *Y, float *R) // функция сравнения попадания/промаха
+bool is_target_hit(float *p_x, float *p_y, float *p_r) // функция сравнения попадания/промаха
 {
-	if(*X**X+*Y**Y<*R**R) {
+	if(*p_x**p_x+*p_y**p_y<*p_r**p_r) {
 		return true;
 	}
 	else {
