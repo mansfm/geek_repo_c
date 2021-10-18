@@ -65,8 +65,12 @@ bool get_user_input(float *X, float *Y, float *R) // функция провер
 	int retcode;
 
 	retcode = scanf("%f%f%f", X, Y, R);
-	if (retcode == 3) {
-        	printf("test\n");
+	if (retcode == 3 && *R != 0 && *R > 0) {
+        	
+		return true;
+		
+		/*
+		printf("test\n");
 		if (*R != 0) {
 			printf("test2\n");
 			if (*R > 0) {
@@ -74,7 +78,9 @@ bool get_user_input(float *X, float *Y, float *R) // функция провер
 				return true;
 			}
 		}
-		//return true;
+		*/
+
+
 	} else {
 		return false;
 	}
